@@ -37,6 +37,8 @@ Clone this repository via git clone command:
 git clone https://github.com/corbatron/MLxmen.git
 ```
 
+Import as Existing maven project.
+
 Run the project as java application, if you are requested for the main class, input `MLxmenApplication` class.
 
 Once you see a `Started MLxmenApplication` message like the below one, it means that Spring Boot has finished the deployment and it's ready to use.
