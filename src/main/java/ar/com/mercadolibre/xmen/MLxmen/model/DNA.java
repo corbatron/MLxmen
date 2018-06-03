@@ -12,7 +12,7 @@ import lombok.Setter;
 public class DNA implements Serializable{
 
 	private static final long serialVersionUID = -7003933868662096317L;
-	private static long minSequence = 4;
+	private static int minSequence = 4;
 	private static final String mutantRegex = "A{"+minSequence+"}|C{"+minSequence+"}|G{"+minSequence+"}|T{"+minSequence+"}";
 	private static final Pattern mutantPattern = Pattern.compile(mutantRegex);
 
@@ -26,9 +26,9 @@ public class DNA implements Serializable{
 		return mutantPattern.matcher(s).find();
 	}
 	
-	public static long numberOfMatches(String input) {
-		long originalLenght = input.length();
-		long replacedLenght = input.replaceAll(mutantRegex, "").length();			
+	public static int numberOfMatches(String input) {
+		int originalLenght = input.length();
+		int replacedLenght = input.replaceAll(mutantRegex, "").length();			
 		return (originalLenght-replacedLenght)/minSequence;
 	}
 	

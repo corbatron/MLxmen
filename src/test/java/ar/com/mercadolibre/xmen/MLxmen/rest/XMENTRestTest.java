@@ -35,23 +35,58 @@ public class XMENTRestTest {
 
 	@Test
 	public void nonNxNDNAShouldReturn500() throws Throwable {
-		String[] dnaString = { "ATGCGdddddddA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG" };			
+		String[] dnaString = { 
+				"AAAAAAAAAAAAAAAAAAAA", 
+				"CAGTGC", 
+				"TTATGT", 
+				"AGAAGG", 
+				"CCCCTA", 
+				"TCACTG" };			
 		ResponseEntity<String> result = doPost(dnaString);
-		assertNotNull(result);
 		assertEquals(result.getStatusCode(), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	@Test
 	public void mutantShouldReturn200() throws Throwable {
-		String[] dnaString = { "ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG" };			
+		String[] dnaString = { 
+				"ATGCGA", 
+				"CAGTGC", 
+				"TTATGT", 
+				"AGAAGG", 
+				"CCCCTA", 
+				"TCACTG" };			
 		ResponseEntity<String> result = doPost(dnaString);
 		assertNotNull(result);
 		assertEquals(result.getStatusCode(), HttpStatus.OK);
 	}
 
 	@Test
+	public void mutant8x8DnaShouldReturn200() throws Throwable {
+		String[] dnaString = {
+				"AXXXXXXX",
+				"XAXXXXXX",
+				"XXAXXXXX",
+				"XXXAXXXX",
+				"XXXXTXXX",
+				"XXXXXTXX",
+				"XXXXXXTX",
+				"FFFFFFFT" };			
+		ResponseEntity<String> result = doPost(dnaString);
+		assertNotNull(result);
+		assertEquals(result.getStatusCode(), HttpStatus.OK);
+	}
+
+	
+	
+	@Test
 	public void nonMutantShouldReturn403() throws Throwable {
-		String[] dnaString = { "AAACCC", "TTTGGG", "AAACCC", "TTTGGG", "AAACCC", "TTTGGG" };
+		String[] dnaString = { 
+				"AAACCC", 
+				"TTTGGG", 
+				"AAACCC", 
+				"TTTGGG", 
+				"AAACCC", 
+				"TTTGGG" };
 		ResponseEntity<String> result = doPost(dnaString);
 		assertNotNull(result);
 		assertEquals(result.getStatusCode(), HttpStatus.FORBIDDEN);
@@ -63,8 +98,6 @@ public class XMENTRestTest {
 		assertNotNull(result);
 		assertEquals(result.getStatusCode(), HttpStatus.NOT_FOUND);
 	}
-	
-
 
 	@Test
 	public void queryStatsShouldReturn200() {

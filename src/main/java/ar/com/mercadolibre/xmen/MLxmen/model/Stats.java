@@ -11,7 +11,6 @@ import lombok.NonNull;
 import lombok.Setter;
 
 @Getter 
-@Setter 
 @JsonPropertyOrder({ "count_mutant_dna", "count_human_dna","ratio" })
 public class Stats implements Serializable{
 
