@@ -84,5 +84,8 @@ This method shows how many DNA chains were checked and how many were detected as
 ### Tech considerations
  - There is certainly no limits over the DNA size as long as it's NxN
  - Stats are cached into a redis instance in order to avoid searching them on-demand, this can be adjusted by using a right TTL in the property file or setting up a new un-cached method. It's not recommended to have a redis server for only storing the stats, so, it might be suitable to disable it according to what is required.
- - In order to simplify the schema, all services were installed on the same server, but I suggest the reader to take a look at the suggested architecture.
+ - In order to simplify the schema, all services were installed on the same server, but I suggest the reader to take a look at the suggested architecture below.
+ 
+ ![Suggested Architecture](https://github.com/corbatron/MLxmen/blob/master/Suggested%20Architecture.jpg)
+
 
