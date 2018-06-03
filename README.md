@@ -85,11 +85,11 @@ This method shows how many DNA chains were checked and how many were detected as
 - Below screenshots show the server added into an autoscaling group:
 
 Instance running the application:
- ![autoscale1](https://github.com/corbatron/MLxmen/blob/master/autoscale1.jpg)
+ ![autoscale1](https://github.com/corbatron/MLxmen/blob/master/autoscale1.JPG)
  
 Autoscale group containing the above instance:
- ![autoscale2](https://github.com/corbatron/MLxmen/blob/master/autoscale2.jpg)
+ ![autoscale2](https://github.com/corbatron/MLxmen/blob/master/autoscale2.JPG)
  
 Scale policy (might need adjusted)
-![autoscale3](https://github.com/corbatron/MLxmen/blob/master/autoscale3.jpg)
+![autoscale3](https://github.com/corbatron/MLxmen/blob/master/autoscale3.JPG)
 
