@@ -8,7 +8,6 @@ In order to run this project you need:
 - Java 8
 - Maven (at least 3.3.9)
 - MongoDB 
-- Redis
 
 As an alternative, you can avoid doing the installation of Mongo and Redis server by using Docker containers.
 
@@ -20,12 +19,6 @@ Before running the application for the first time, please update the `applicatio
     spring.data.mongodb.database=xmen
     spring.data.mongodb.host=192.168.99.100
     spring.data.mongodb.port=27017
-
-    #Redis server configuration
-    spring.cache.type=redis
-    spring.cache.redis.time-to-live=3600s 
-    spring.redis.host=192.168.99.100
-    spring.redis.port=32776
 
 
 
@@ -85,9 +78,5 @@ This method shows how many DNA chains were checked and how many were detected as
 
 ### Tech considerations
  - There is certainly no limits over the DNA size as long as it's NxN
- - Stats are cached into a redis instance in order to avoid searching them on-demand, this can be adjusted by using a right TTL in the property file or setting up a new un-cached method. It's not recommended to have a redis server for only storing the stats, so, it might be suitable to disable it according to what is required.
- - In order to simplify the schema, all services were installed on the same server, but I suggest the reader to take a look at the suggested architecture below.
- 
- ![Suggested Architecture](https://github.com/corbatron/MLxmen/blob/master/Suggested%20Architecture.jpg)
-
+ - In order to simplify the schema, all services were installed on the same server.
 

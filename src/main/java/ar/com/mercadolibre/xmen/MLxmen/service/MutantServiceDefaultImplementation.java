@@ -112,7 +112,6 @@ public class MutantServiceDefaultImplementation implements MutantService {
 	}
 
 	@Override
-	@Cacheable(sync=true,value="stats")
 	public Stats getStats() {
 		long totalRecords = DNADao.count();
 		DNA dna = new DNA();
