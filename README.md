@@ -78,5 +78,18 @@ This method shows how many DNA chains were checked and how many were detected as
 
 ### Tech considerations
  - There is certainly no limits over the DNA size as long as it's NxN
- - In order to simplify the schema, all services were installed on the same server.
+ - In order to simplify the schema, all services were installed on the same server, but it would be better to have the DB running in a different one as suggested below
+ 
+ ![Suggested Architecture](https://github.com/corbatron/MLxmen/blob/master/Suggested%20Architecture.jpg)
+
+- Below screenshots show the server added into an autoscaling group:
+
+Instance running the application:
+ ![autoscale1](https://github.com/corbatron/MLxmen/blob/master/autoscale1.jpg)
+ 
+Autoscale group containing the above instance:
+ ![autoscale2](https://github.com/corbatron/MLxmen/blob/master/autoscale2.jpg)
+ 
+Scale policy (might need adjusted)
+![autoscale3](https://github.com/corbatron/MLxmen/blob/master/autoscale3.jpg)
 
